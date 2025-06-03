@@ -13,9 +13,7 @@ import java.util.List;
  */
 public class Demo102 {
 
-
     public List<List<Integer>> levelOrder(TreeNode root) {
-
         //结果
         List<List<Integer>> res = new ArrayList<>();
         //队列
@@ -38,6 +36,25 @@ public class Demo102 {
         }
         return res;
 
+    }
+
+    public List<List<Integer>> levelOrder2(TreeNode root) {
+        List<List<Integer>> result = new ArrayList<>();
+        helper(root, 0, result);
+        return result;
+    }
+
+    private void helper(TreeNode node, int level, List<List<Integer>> result) {
+        if (node == null) return;
+
+        if (level == result.size()) {
+            result.add(new ArrayList<>());
+        }
+
+        result.get(level).add(node.val);
+
+        helper(node.left, level + 1, result);
+        helper(node.right, level + 1, result);
     }
 
 }

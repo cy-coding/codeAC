@@ -2,7 +2,7 @@ package Search;
 
 /**
  * @author chuYun
- * @description: TODO
+ * @description: 二分查找
  * @date 2025/3/16 22:19
  */
 public class SearchStudy {
